@@ -14,6 +14,7 @@ public class PlayerShooting : MonoBehaviour
     ParticleSystem gunParticles;
     LineRenderer gunLine;
     AudioSource gunAudio;
+    Light faceLight;
     Light gunLight;
     float effectsDisplayTime = 0.2f;
 
@@ -24,6 +25,7 @@ public class PlayerShooting : MonoBehaviour
         gunParticles = GetComponent<ParticleSystem> ();
         gunLine = GetComponent <LineRenderer> ();
         gunAudio = GetComponent<AudioSource> ();
+        faceLight = GetComponentInChildren<Light> ();
         gunLight = GetComponent<Light> ();
     }
 
@@ -47,6 +49,7 @@ public class PlayerShooting : MonoBehaviour
     public void DisableEffects ()
     {
         gunLine.enabled = false;
+        faceLight.enabled = false;
         gunLight.enabled = false;
     }
 
@@ -57,8 +60,8 @@ public class PlayerShooting : MonoBehaviour
 
         gunAudio.Play ();
 
+        faceLight.enabled = true;
         gunLight.enabled = true;
-
         gunParticles.Stop ();
         gunParticles.Play ();
 
