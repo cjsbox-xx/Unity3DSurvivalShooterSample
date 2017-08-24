@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{a88c230c-67e9-4df5-89c1-68539739f0a4}">
+        <property name="assetPath">
+            <value>Effects/Character/Player/fs_road_35.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.38714285714285712</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{3cdfb586-82ab-4745-b4bd-a5c9d6b0439f}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{c3220e21-5c80-4804-aa16-251e30beab14}">
+        <property name="assetPath">
+            <value>Music/210799__yuval__gentle-music-box.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>96.052791666666664</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{3cdfb586-82ab-4745-b4bd-a5c9d6b0439f}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -6,24 +7,21 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
-    public AudioClip deathClip;
-
 
     Animator anim;
-    AudioSource enemyAudio;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool isSinking;
 
+    private FMODUnity.StudioEventEmitter eventEmitterRef;
 
     void Awake ()
     {
         anim = GetComponent <Animator> ();
-        enemyAudio = GetComponent <AudioSource> ();
         hitParticles = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
-
+        eventEmitterRef = GetComponent<FMODUnity.StudioEventEmitter>();
         currentHealth = startingHealth;
     }
 
@@ -41,8 +39,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(isDead)
             return;
-
-        enemyAudio.Play ();
+        eventEmitterRef.Play();
 
         currentHealth -= amount;
             
@@ -63,9 +60,6 @@ public class EnemyHealth : MonoBehaviour
         capsuleCollider.isTrigger = true;
 
         anim.SetTrigger ("Dead");
-
-        enemyAudio.clip = deathClip;
-        enemyAudio.Play ();
     }
 
 

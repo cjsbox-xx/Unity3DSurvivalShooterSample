@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{7fc4bab2-cf15-4315-ba36-a45942de5d25}">
+        <property name="assetPath">
+            <value>Effects/Character/Player/fs_road_8.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.42925170068027213</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{3cdfb586-82ab-4745-b4bd-a5c9d6b0439f}</destination>
+        </relationship>
+    </object>
+</objects>

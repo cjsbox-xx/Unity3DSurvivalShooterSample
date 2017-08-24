@@ -5,6 +5,8 @@ public class PlayerShooting : MonoBehaviour
     public int damagePerShot = 20;
     public float timeBetweenBullets = 0.15f;
     public float range = 100f;
+    [FMODUnity.EventRef] 
+    public string ShotEvent;
 
 
     float timer;
@@ -13,7 +15,6 @@ public class PlayerShooting : MonoBehaviour
     int shootableMask;
     ParticleSystem gunParticles;
     LineRenderer gunLine;
-    AudioSource gunAudio;
     Light faceLight;
     Light gunLight;
     float effectsDisplayTime = 0.2f;
@@ -24,7 +25,6 @@ public class PlayerShooting : MonoBehaviour
         shootableMask = LayerMask.GetMask ("Shootable");
         gunParticles = GetComponent<ParticleSystem> ();
         gunLine = GetComponent <LineRenderer> ();
-        gunAudio = GetComponent<AudioSource> ();
         faceLight = GetComponentInChildren<Light> ();
         gunLight = GetComponent<Light> ();
     }
@@ -58,8 +58,9 @@ public class PlayerShooting : MonoBehaviour
     {
         timer = 0f;
 
-        gunAudio.Play ();
-
+        var eventInstance = FMODUnity.RuntimeManager.CreateInstance(ShotEvent);
+        eventInstance.start();
+        eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         faceLight.enabled = true;
         gunLight.enabled = true;
         gunParticles.Stop ();

@@ -11,6 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private int floorMask;
     private float camRayLength = 100.0f;
 
+    public Rigidbody GetRigidbody()
+    {
+        return playerRigidBody;
+    }
+
     void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
@@ -54,4 +59,10 @@ public class PlayerMovement : MonoBehaviour
         bool walking = h != 0.0f || v != 0.0f;
         animator.SetBool(WALKING_PARAM, walking);
     }
+
+    void PlaySound(string path)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
+    }
+
 }

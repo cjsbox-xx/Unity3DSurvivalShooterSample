@@ -29,4 +29,9 @@ public class EnemyMovement : MonoBehaviour
             nav.enabled = false;
         }
     }
+
+    void PlaySound(string path)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
+    }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.09.00">
+    <object class="MixerGroup" id="{c07dc351-dbfe-4536-ab7e-be13d17ef809}">
+        <property name="name">
+            <value>Music</value>
+        </property>
+        <relationship name="effectChain">
+            <destination>{c85bf607-a502-43e8-9050-1eff25f56a43}</destination>
+        </relationship>
+        <relationship name="panner">
+            <destination>{7b0e73b3-9dd5-4631-a8ca-13b964d0116b}</destination>
+        </relationship>
+        <relationship name="output">
+            <destination>{c857f3e7-0f68-4bd5-9a27-47e5a6ff6caa}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{c85bf607-a502-43e8-9050-1eff25f56a43}">
+        <relationship name="effects">
+            <destination>{bd70bb8c-4871-4298-885a-00679a389c8b}</destination>
+            <destination>{f63a5983-d5f0-42a8-95f2-534e0e5ea11b}</destination>
+            <destination>{66fb8fde-9110-43ce-bf43-410338d43c56}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusPanner" id="{7b0e73b3-9dd5-4631-a8ca-13b964d0116b}"/>
+    <object class="MixerBusFader" id="{bd70bb8c-4871-4298-885a-00679a389c8b}"/>
+    <object class="ThreeEQEffect" id="{f63a5983-d5f0-42a8-95f2-534e0e5ea11b}"/>
+    <object class="SFXReverbEffect" id="{66fb8fde-9110-43ce-bf43-410338d43c56}">
+        <property name="decayTime">
+            <value>100</value>
+        </property>
+    </object>
+</objects>

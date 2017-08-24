@@ -32,3 +32,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+*.cache
+*.unsaved
+*.user
+FMODProjects/Survival Shooter/Build/
